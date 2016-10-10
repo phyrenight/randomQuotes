@@ -26,8 +26,10 @@ var Quotes = [{
 
 $(document).ready(main)
   function main() {
+    url = "https://twitter.com/intent/tweet?text="
     randomNum = Math.round(Math.random() * (7 - 1) + 1);
       $("blockquote").remove();
-      $(".Quotes").append("<blockquote>"+Quotes[randomNum]["quote"]+"<cite>"+Quotes[randomNum]["author"]+"</cite></blockquote>")
-      console.log(Quotes[randomNum]);    
+      $(".Quotes").append("<blockquote>"+Quotes[randomNum]["quote"]+"<cite>"+Quotes[randomNum]["author"]+"</cite></blockquote>");
+      $(".twitter").attr("href", url + Quotes[randomNum]["quote"]+Quotes[randomNum]["quote"]);
+
   };
