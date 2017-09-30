@@ -25,6 +25,13 @@ var Quotes = [{
 }];
 
 $(document).ready(main);
+/** generates a random number.
+ *  
+ * @return {number}
+ */
+function getRandomNumber()
+    return Math.round(Math.random() * (7 - 1) + 1);
+
 function main() {
   url = "https://twitter.com/intent/tweet?text=";
   randomNum = Math.round(Math.random() * (7 - 1) + 1);
