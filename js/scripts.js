@@ -1,4 +1,4 @@
-var Quotes = [{
+const Quotes = [{
       quote: "You are every reason, every hope and every dream I've ever had.",
       author : "Nicholas Sparks(The Notebook)"
     },{
@@ -29,13 +29,16 @@ $(document).ready(main);
  *  
  * @return {number}
  */
-function getRandomNumber()
-    return Math.round(Math.random() * (7 - 1) + 1);
+function getRandomNumber(){
+  return Math.round(Math.random() * (7 - 1) + 1);
+}
 
+/** Displays content to the page
+ */
 function main() {
-  url = "https://twitter.com/intent/tweet?text=";
-  randomNum = Math.round(Math.random() * (7 - 1) + 1);
-    $("blockquote").remove();
-    $(".Quotes").append("<blockquote>"+Quotes[randomNum].quote+"<cite><p>"+Quotes[randomNum].author+"</p></cite></blockquote>");
-    $(".twitter").attr("href", url + Quotes[randomNum].quote+Quotes[randomNum].quote);
+  const url = "https://twitter.com/intent/tweet?text=";
+  let randomNum = getRandomNumber();
+  $("blockquote").remove();
+  $(".Quotes").append("<blockquote>"+Quotes[randomNum].quote+"<cite><p>"+Quotes[randomNum].author+"</p></cite></blockquote>");
+  $(".twitter").attr("href", url + Quotes[randomNum].quote+Quotes[randomNum].quote);
 }
